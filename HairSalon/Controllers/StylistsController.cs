@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Restaurant.Models;
+using Salon.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -52,6 +52,13 @@ namespace Salon.Controllers
       Stylist thisStylist = _db.Stylists.FirstOrDefault(StylistsController => Stylist.StylistId == id);
       return View(thisStylist);
     }
-
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
+      _db.Stylists.Remove(thisStylist);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

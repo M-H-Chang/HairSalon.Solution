@@ -17,7 +17,7 @@ namespace Salon.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult ClientIndex()
     {
       List<Client> listOfClients = _db.Clients.Include(client => client.Stylist).ToList();
       return View(listOfClients);
@@ -33,7 +33,7 @@ namespace Salon.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("ClientIndex");
     }
 
     public ActionResult Details(int id)

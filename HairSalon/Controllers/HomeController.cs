@@ -5,7 +5,7 @@ namespace Salon.Controllers
   public class HomeController : Controller
   {
     [HttpGet("/")]
-    public ActionResult Index()
+    public ActionResult HomeIndex()
     {
       return View();
     }

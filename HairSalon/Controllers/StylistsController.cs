@@ -15,12 +15,7 @@ namespace Salon.Controllers
     {
       _db = db;
     }
-    public ActionResult Index()
-    {
-      List<Stylist> model = _db.Stylists.ToList();
-      return View(model);
-    }
-    public ActionResult Index()
+    public ActionResult StylistIndex()
     {
       List<Stylist> model = _db.Stylists.ToList();
       return View(model);
@@ -49,7 +44,7 @@ namespace Salon.Controllers
     }
     public ActionResult Delete(int id)
     {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(StylistsController => Stylist.StylistId == id);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
       return View(thisStylist);
     }
     [HttpPost, ActionName("Delete")]

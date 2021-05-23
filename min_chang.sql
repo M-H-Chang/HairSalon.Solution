@@ -19,7 +19,7 @@
 -- Table structure for table `Client`
 --
 
-DROP TABLE IF EXISTS `Client`;
+DROP TABLE IF EXISTS `Clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `Client` (
@@ -34,7 +34,7 @@ CREATE TABLE `Client` (
 -- Table structure for table `Stylist`
 --
 
-DROP TABLE IF EXISTS `Stylist`;
+DROP TABLE IF EXISTS `Stylists`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `Stylist` (

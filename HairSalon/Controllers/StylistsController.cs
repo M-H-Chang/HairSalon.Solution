@@ -41,6 +41,14 @@ namespace Salon.Controllers
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
       return View(thisStylist);
+
+    }
+    [HttpPost]
+    public ActionResult Edit(Stylist stylist)
+    {
+      _db.Entry(stylist).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("StylistIndex");
     }
     public ActionResult Delete(int id)
     {
@@ -53,7 +61,7 @@ namespace Salon.Controllers
       Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
       _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("StylistIndex");
     }
   }
 }

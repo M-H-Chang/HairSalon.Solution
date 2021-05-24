@@ -54,7 +54,7 @@ namespace Salon.Controllers
     {
       _db.Entry(client).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("ClientIndex");
     }
     public ActionResult Delete(int id)
     {
@@ -67,7 +67,7 @@ namespace Salon.Controllers
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       _db.Clients.Remove(thisClient);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("ClientIndex");
     }
   }
 }

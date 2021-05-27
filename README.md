@@ -2,7 +2,7 @@
 
 ## Technologies Used
 
-- C# / .NET 5 Framework / MySQL
+- C# / .NET 5 Framework / MySQL / Entity
 
 ## Description
 
@@ -12,11 +12,18 @@ This application lets the user create stylits and add clients to those stylists.
 
 - Get the source code: `$ git clone https://github.com/M-H-Chang/HairSalon.Solution`
 - In HairSalon get your dependencies: `$ dotnet restore`
+- Create file to store your database with touch appsettings.json in your terminal (make sure it is in the hairsalon root directory)
+- In appsettings.json enter in the following 
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=EauClaireSalon;uid=[user mysql username];pwd=[user mysql password];"
+  }
+}
 - Create a database using SQL via MySQL:
-  - `CREATE DATABASE <firstname_lastname>;`
-  - `USE <firstname_lastname>;`
-  - `CREATE TABLE <Stylists> (<Add StylistId, StylistName columns>);`
-  - `CREATE TABLE <Clients> (<Add ClientId, ClientName, StylistId columns>);`
+  - Using the import function under administrations select Data Import/Restore
+  - Select option for Self-Contained File then navigate to root directory for file
+  - Start the import
+  - Refresh schema
 - `$ dotnet watch build` for live changes
 - Local Host 5000
 
